@@ -10,47 +10,38 @@ export interface CabActivity {
 export const cardData: CabActivity[] = [
   {
     id: '1',
-    username: 'Rajesh Kumar',
+    username: 'Rohan Deshmukh',
     action: 'MERGED',
-    timestamp: '2 mins ago',
+    timestamp: '2 hours ago',
     avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
-    repoName: 'Ertiga Premium - Cab #KA-03-ME-4521',
+    repoName: 'Pune to Mumbai T2 Airport Drop',
   },
   {
     id: '2',
-    username: 'Ananya Sharma',
+    username: 'Priya Kulkarni',
     action: 'COMMIT',
-    timestamp: '15 mins ago',
+    timestamp: '5 hours ago',
     avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80',
-    repoName: 'Ertiga Classic - Cab #KA-05-MT-8812',
+    repoName: 'Mumbai to Pune (Kothrud) Drop',
   },
   {
     id: '3',
-    username: 'Vikram Singh',
+    username: 'Amit Patel',
     action: 'MERGED',
-    timestamp: '1 hour ago',
+    timestamp: '1 day ago',
     avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
-    repoName: 'Ertiga Luxury - Cab #KA-01-MJ-9041',
+    repoName: 'Pune to Navi Mumbai Round Trip',
   },
 ];
 
 export const ertigaCabs = [
   {
-    id: 'ertiga-premium',
-    name: 'Ertiga Premium Cruise',
-    type: 'Premium 6-Seater SUV',
-    pricePerKm: '₹18/km',
-    rating: 4.9,
+    id: 'my-ertiga',
+    name: 'My Premium Ertiga',
+    type: 'Personalized 6-Seater SUV',
+    pricePerKm: 'Fixed Route Rates',
+    rating: 5.0,
     image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=400&auto=format&fit=crop&q=80',
-    features: ['Plush Leather Seats', 'Dual Zone AC', 'Complimentary Water', 'Experienced Captain'],
-  },
-  {
-    id: 'ertiga-classic',
-    name: 'Ertiga Classic Comfort',
-    type: 'Standard 6-Seater SUV',
-    pricePerKm: '₹14/km',
-    rating: 4.7,
-    image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=400&auto=format&fit=crop&q=80',
-    features: ['Comfortable Seating', 'AC', 'USB Charger', 'Professional Driver'],
-  },
+    features: ['Driven by Owner', 'Immaculate Condition', 'Spacious & Comfortable', 'Safe & Reliable'],
+  }
 ];

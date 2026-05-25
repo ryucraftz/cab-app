@@ -50,16 +50,16 @@ function App() {
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#fleet" className="text-sm font-medium hover:text-primary transition-colors duration-300 relative group py-2">
-              Our Fleet
+            <a href="#services" className="text-sm font-medium hover:text-primary transition-colors duration-300 relative group py-2">
+              Our Services
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
             </a>
             <a href="#activities" className="text-sm font-medium hover:text-primary transition-colors duration-300 relative group py-2">
-              Live Activities
+              Recent Rides
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
             </a>
             <a href="#about" className="text-sm font-medium hover:text-primary transition-colors duration-300 relative group py-2">
-              Why Ertiga
+              Why Choose Me
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
             </a>
           </nav>
@@ -93,25 +93,25 @@ function App() {
         {mobileMenuOpen && (
           <div className="md:hidden backdrop-blur-lg bg-background-dark/95 border-b border-white/5 px-4 pt-2 pb-6 space-y-3">
             <a 
-              href="#fleet" 
+              href="#services" 
               onClick={() => setMobileMenuOpen(false)}
               className="block px-3 py-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-all font-medium"
             >
-              Our Fleet
+              Our Services
             </a>
             <a 
               href="#activities" 
               onClick={() => setMobileMenuOpen(false)}
               className="block px-3 py-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-all font-medium"
             >
-              Live Activities
+              Recent Rides
             </a>
             <a 
               href="#about" 
               onClick={() => setMobileMenuOpen(false)}
               className="block px-3 py-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-all font-medium"
             >
-              Why Ertiga
+              Why Choose Me
             </a>
             <div className="pt-4 flex flex-col gap-3">
               <a 
@@ -137,11 +137,11 @@ function App() {
         </div>
         
         <h1 className="font-display font-bold text-5xl md:text-7xl text-white tracking-tight leading-tight max-w-4xl mx-auto">
-          Premium 6-Seater Rides, <span className="text-primary">On Demand.</span>
+          Pune-Mumbai Premium <span className="text-primary">Ertiga Service.</span>
         </h1>
         
         <p className="mt-6 text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-          Experience the perfect blend of comfort and reliability for your family and group travel needs. Spacious seating, professional drivers, and seamless bookings.
+          Your personalized, direct connection between Pune and Mumbai. Enjoy the comfort of my personal 6-seater SUV, safe driving, and timely arrivals for your trips.
         </p>
 
         {/* Action CTAs */}
@@ -156,10 +156,10 @@ function App() {
         {/* 4. Mapped High-End Statistics Block */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
           {[
-            { label: 'Verified Ertigas', value: '150+', icon: Car, color: 'text-primary bg-primary/10 border-primary/20' },
-            { label: 'Rating average', value: '4.85 / 5', icon: Star, color: 'text-yellow-400 bg-yellow-400/10 border-yellow-400/20' },
-            { label: 'Happy passengers', value: '50k+', icon: Users, color: 'text-accent-lavender bg-accent-lavender/10 border-accent-lavender/20' },
-            { label: 'Captain support', value: '24 / 7', icon: Shield, color: 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20' }
+            { label: 'Pune-Mumbai Trips', value: '300+', icon: Car, color: 'text-primary bg-primary/10 border-primary/20' },
+            { label: 'Rating average', value: '5.0 / 5', icon: Star, color: 'text-yellow-400 bg-yellow-400/10 border-yellow-400/20' },
+            { label: 'Happy passengers', value: '1000+', icon: Users, color: 'text-accent-lavender bg-accent-lavender/10 border-accent-lavender/20' },
+            { label: 'Safe & Verified', value: '100%', icon: Shield, color: 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20' }
           ].map((stat, i) => (
             <div 
               key={i} 
@@ -197,36 +197,36 @@ function App() {
             <StitchCard>
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-3 bg-primary/10 rounded-xl text-primary">
-                  <span className="material-icons text-2xl">flight_takeoff</span>
+                  <span className="material-icons text-2xl">route</span>
                 </div>
-                <h3 className="font-display text-xl font-bold text-white">Airport Transfers</h3>
+                <h3 className="font-display text-xl font-bold text-white">Pune-Mumbai Drop</h3>
               </div>
               <p className="text-gray-400 leading-relaxed">
-                Start or end your journey with stress-free rides. Our Ertiga cabs offer ample luggage space, ensuring your belongings travel as comfortably as you do.
+                Direct point-to-point drop services between Pune and Mumbai. Travel comfortably in a personal, well-maintained Ertiga.
               </p>
             </StitchCard>
 
             <StitchCard>
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-3 bg-accent-lavender/10 rounded-xl text-accent-lavender">
-                  <span className="material-icons text-2xl">landscape</span>
+                  <span className="material-icons text-2xl">flight_takeoff</span>
                 </div>
-                <h3 className="font-display text-xl font-bold text-white">Outstation Getaways</h3>
+                <h3 className="font-display text-xl font-bold text-white">Airport Transfers</h3>
               </div>
               <p className="text-gray-400 leading-relaxed">
-                Perfect for weekend escapes and long drives. Enjoy generous legroom and family-oriented comfort for memorable road trips.
+                Reliable drops to Mumbai T2 or Pune Airport. Rest assured you'll reach your flight on time with plenty of luggage space.
               </p>
             </StitchCard>
 
             <StitchCard>
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-3 bg-emerald-400/10 rounded-xl text-emerald-400">
-                  <span className="material-icons text-2xl">location_city</span>
+                  <span className="material-icons text-2xl">update</span>
                 </div>
-                <h3 className="font-display text-xl font-bold text-white">City Rentals</h3>
+                <h3 className="font-display text-xl font-bold text-white">Same-Day Return</h3>
               </div>
               <p className="text-gray-400 leading-relaxed">
-                Navigate the urban landscape with ease. Flexible hourly packages designed for meetings, shopping, or local sightseeing.
+                Need to travel to Mumbai for a meeting and return to Pune the same day? Book a flexible two-way trip tailored for your schedule.
               </p>
             </StitchCard>
           </div>
@@ -237,13 +237,13 @@ function App() {
           <div className="max-w-3xl mx-auto text-center mb-12">
             <div className="inline-flex items-center gap-2 text-primary font-semibold text-sm tracking-wider uppercase mb-2">
               <TrendingUp className="h-4 w-4" />
-              <span>Stitch Capability Live Verification</span>
+              <span>Route Live Verification</span>
             </div>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white">
-              Global Component Mappings
+              Recent Rides & Logs
             </h2>
             <p className="text-gray-400 text-sm mt-3">
-              The dashboard displays active cab telemetry logs by rendering the **Stitch Gold Standard Activity Card** component. Imported directly via path alias `@stitch/examples/gold-standard-card`.
+              This feed displays recent Pune-Mumbai trips by rendering the **Stitch Gold Standard Activity Card** component. Imported directly via path alias `@stitch/examples/gold-standard-card`.
             </p>
           </div>
 
@@ -255,7 +255,7 @@ function App() {
                 Live Log Feeds
               </span>
               <span className="text-[10px] text-gray-400 bg-white/5 px-2 py-0.5 rounded border border-white/5">
-                3 Mapped Feeds
+                3 Recent Trips
               </span>
             </div>
 
