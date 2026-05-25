@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #19e66f;
+  
+  --color-background-light: #f6f8f7;
+  --color-background-dark: #112118;
+  --color-background-elevated: #1a1a1a;
+  --color-surface-dark: #182b20;
+  
+  --color-accent-purple: #8a2be2;
+  --color-accent-lavender: #d0a9f5;
+  
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "Outfit", sans-serif;
+  --font-icons: "Material Symbols Outlined";
+  
+  --spacing-header-h: 72px;
+  --spacing-container-max: 960px;
+}
+
+/* Base custom styles to reset defaults and ensure premium feel */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-background-dark);
+  color: #e5e7eb; /* text-gray-200 */
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.material-icons {
+  font-family: var(--font-icons);
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
