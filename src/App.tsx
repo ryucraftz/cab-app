@@ -41,7 +41,7 @@ function App() {
             </div>
             <div className="flex flex-col">
               <span className="font-display font-bold text-xl tracking-tight text-white group-hover:text-primary transition-colors duration-300">
-                ERTIGA<span className="text-primary">CAB</span>
+                YOGESH<span className="text-primary">CABS</span>
               </span>
               <span className="text-[10px] tracking-widest text-primary/70 font-semibold uppercase -mt-1">
                 Premium 6-Seater
@@ -145,7 +145,7 @@ function App() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <h1 className="font-display font-bold text-5xl md:text-7xl text-white tracking-tight leading-tight max-w-4xl mx-auto">
-          Pune-Mumbai Premium <span className="bg-gradient-to-r from-primary via-accent-purple to-accent-lavender bg-clip-text text-transparent">Ertiga Service.</span>
+          Pune-Mumbai Premium <span className="bg-gradient-to-r from-primary via-accent-purple to-accent-lavender bg-clip-text text-transparent">Yogesh Cabs.</span>
         </h1>
         
         <p className="mt-6 text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
@@ -215,7 +215,7 @@ function App() {
                 <h3 className="font-display text-xl font-bold text-white">Pune-Mumbai Drop</h3>
               </div>
               <p className="text-gray-400 leading-relaxed">
-                Direct point-to-point drop services between Pune and Mumbai. Travel comfortably in a personal, well-maintained Ertiga.
+                Direct point-to-point drop services between Pune and Mumbai. Travel comfortably in a personal, well-maintained Yogesh Cabs SUV.
               </p>
             </StitchCard>
 
@@ -298,7 +298,7 @@ function App() {
       {/* Footer */}
       <footer className="border-t border-white/5 bg-background-dark py-12 text-center text-xs text-gray-500">
         <div className="max-w-7xl mx-auto px-4">
-          <p>© 2026 Ertiga Cab Service. All rights reserved.</p>
+          <p>© 2026 Yogesh Cabs. All rights reserved.</p>
           <p className="mt-2 text-primary/50">Stitch UI Skills Integrated & Globally Aliased for Antigravity Agent Standard</p>
         </div>
       </footer>
