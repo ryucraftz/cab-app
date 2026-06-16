@@ -143,10 +143,6 @@ function App() {
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary mb-6 animate-pulse">
-          <Sparkles className="h-3.5 w-3.5" />
-          <span>STITCH UI CAPABILITIES INTEGRATED</span>
-        </div>
         
         <h1 className="font-display font-bold text-5xl md:text-7xl text-white tracking-tight leading-tight max-w-4xl mx-auto">
           Pune-Mumbai Premium <span className="bg-gradient-to-r from-primary via-accent-purple to-accent-lavender bg-clip-text text-transparent">Ertiga Service.</span>
