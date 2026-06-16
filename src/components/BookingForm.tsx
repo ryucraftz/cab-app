@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useState, type FormEvent } from 'react';
 import { Calendar, Clock, MapPin, Users, Phone, User, MessageCircle } from 'lucide-react';
 import { StitchButton } from './StitchButton';
 
