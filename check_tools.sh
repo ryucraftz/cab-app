@@ -1,0 +1,12 @@
+echo "=== PATH ==="
+echo $PATH
+echo "=== NODE/NPM ==="
+which node || echo "node not in path"
+which npm || echo "npm not in path"
+which bun || echo "bun not in path"
+which pnpm || echo "pnpm not in path"
+which yarn || echo "yarn not in path"
+echo "=== FNM / NVM / ASDF ==="
+[ -d "$HOME/.fnm" ] && echo "fnm folder exists"
+[ -d "$HOME/.nvm" ] && echo "nvm folder exists"
+[ -d "$HOME/.asdf" ] && echo "asdf folder exists"

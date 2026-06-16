@@ -18,6 +18,7 @@ import { ActivityCard } from '@stitch/examples/gold-standard-card';
 import { cardData } from '@/data/mockData';
 import { StitchButton } from '@/components/StitchButton';
 import { StitchCard } from '@/components/StitchCard';
+import { BookingForm } from '@/components/BookingForm';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -73,11 +74,11 @@ function App() {
               <Phone className="h-4 w-4 text-primary" />
               <span>Call Captain</span>
             </a>
-            <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-semibold rounded-lg group bg-gradient-to-br from-primary to-accent-purple hover:text-background-dark text-white focus:ring-2 focus:outline-none focus:ring-primary/50 transition-all duration-300 shadow-[0_0_15px_rgba(0,240,255,0.2)] hover:shadow-[0_0_25px_rgba(0,240,255,0.4)] mt-2">
+            <a href="#booking" className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-semibold rounded-lg group bg-gradient-to-br from-primary to-accent-purple hover:text-background-dark text-white focus:ring-2 focus:outline-none focus:ring-primary/50 transition-all duration-300 shadow-[0_0_15px_rgba(0,240,255,0.2)] hover:shadow-[0_0_25px_rgba(0,240,255,0.4)] mt-2">
               <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-background-dark rounded-md group-hover:bg-opacity-0">
                 Book Ride
               </span>
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -121,17 +122,28 @@ function App() {
                 <Phone className="h-4 w-4 text-primary" />
                 <span>Call Captain</span>
               </a>
-              <button className="w-full py-3 rounded-lg bg-gradient-to-r from-primary to-accent-purple text-background-dark font-semibold text-center hover:opacity-90 transition-opacity">
+              <a 
+                href="#booking"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block w-full py-3 rounded-lg bg-gradient-to-r from-primary to-accent-purple text-background-dark font-semibold text-center hover:opacity-90 transition-opacity"
+              >
                 Book Ride Now
-              </button>
+              </a>
             </div>
           </div>
         )}
       </header>
 
       {/* 3. Hero Section */}
-      <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 text-center">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary mb-6 animate-pulse">
+      <section className="relative pt-24 pb-32 text-center overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-50" style={{ backgroundImage: 'url(/images/hero_bg.png)' }} />
+          <div className="absolute inset-0 bg-gradient-to-b from-background-dark/90 via-background-dark/70 to-background-dark" />
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary mb-6 animate-pulse">
           <Sparkles className="h-3.5 w-3.5" />
           <span>STITCH UI CAPABILITIES INTEGRATED</span>
         </div>
@@ -173,10 +185,15 @@ function App() {
             </div>
           ))}
         </div>
+        </div>
       </section>
 
       {/* 5. Main Content: Fleet & Live Activity Mappings */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-white/5 bg-black/10">
+      <main className="relative py-20 border-t border-white/5">
+        <div className="absolute inset-0 z-0 opacity-20 bg-cover bg-center bg-fixed pointer-events-none" style={{ backgroundImage: 'url(/images/services_bg.png)' }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background-dark z-0 pointer-events-none" />
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Services Grid */}
         <section id="services" className="mb-24">
@@ -232,7 +249,12 @@ function App() {
           </div>
         </section>
 
-        {/* 6. Live Stitch Activity Mappings (INTEGRATION VERIFICATION) */}
+        {/* 6. Booking Section */}
+        <section id="booking" className="mb-24 pt-16 border-t border-white/5 relative z-10">
+          <BookingForm />
+        </section>
+
+        {/* 7. Live Stitch Activity Mappings (INTEGRATION VERIFICATION) */}
         <section id="activities" className="mb-8 pt-8 border-t border-white/5">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <div className="inline-flex items-center gap-2 text-primary font-semibold text-sm tracking-wider uppercase mb-2">
@@ -274,6 +296,7 @@ function App() {
           </div>
         </section>
 
+        </div>
       </main>
 
       {/* Footer */}
