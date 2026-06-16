@@ -34,7 +34,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
           {/* Logo with Glow */}
           <div className="flex items-center gap-3 group cursor-pointer">
-            <div className="relative p-2 rounded-xl bg-primary/10 border border-primary/20 shadow-[0_0_15px_rgba(25,230,111,0.15)] group-hover:shadow-[0_0_20px_rgba(25,230,111,0.3)] transition-all duration-500">
+            <div className="relative p-2 rounded-xl bg-primary/10 border border-primary/20 shadow-[0_0_15px_rgba(0,240,255,0.15)] group-hover:shadow-[0_0_20px_rgba(0,240,255,0.3)] transition-all duration-500">
               <Car className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-500" />
               <div className="absolute -inset-0.5 bg-primary rounded-xl blur opacity-0 group-hover:opacity-20 transition duration-500" />
             </div>
@@ -73,7 +73,7 @@ function App() {
               <Phone className="h-4 w-4 text-primary" />
               <span>Call Captain</span>
             </a>
-            <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-semibold rounded-lg group bg-gradient-to-br from-primary to-emerald-600 hover:text-background-dark text-white focus:ring-2 focus:outline-none focus:ring-primary/50 transition-all duration-300 shadow-[0_0_15px_rgba(25,230,111,0.2)] hover:shadow-[0_0_25px_rgba(25,230,111,0.4)] mt-2">
+            <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-semibold rounded-lg group bg-gradient-to-br from-primary to-accent-purple hover:text-background-dark text-white focus:ring-2 focus:outline-none focus:ring-primary/50 transition-all duration-300 shadow-[0_0_15px_rgba(0,240,255,0.2)] hover:shadow-[0_0_25px_rgba(0,240,255,0.4)] mt-2">
               <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-background-dark rounded-md group-hover:bg-opacity-0">
                 Book Ride
               </span>
@@ -121,7 +121,7 @@ function App() {
                 <Phone className="h-4 w-4 text-primary" />
                 <span>Call Captain</span>
               </a>
-              <button className="w-full py-3 rounded-lg bg-gradient-to-r from-primary to-emerald-600 text-background-dark font-semibold text-center hover:opacity-90 transition-opacity">
+              <button className="w-full py-3 rounded-lg bg-gradient-to-r from-primary to-accent-purple text-background-dark font-semibold text-center hover:opacity-90 transition-opacity">
                 Book Ride Now
               </button>
             </div>
@@ -137,7 +137,7 @@ function App() {
         </div>
         
         <h1 className="font-display font-bold text-5xl md:text-7xl text-white tracking-tight leading-tight max-w-4xl mx-auto">
-          Pune-Mumbai Premium <span className="text-primary">Ertiga Service.</span>
+          Pune-Mumbai Premium <span className="bg-gradient-to-r from-primary via-accent-purple to-accent-lavender bg-clip-text text-transparent">Ertiga Service.</span>
         </h1>
         
         <p className="mt-6 text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
@@ -159,7 +159,7 @@ function App() {
             { label: 'Pune-Mumbai Trips', value: '300+', icon: Car, color: 'text-primary bg-primary/10 border-primary/20' },
             { label: 'Rating average', value: '5.0 / 5', icon: Star, color: 'text-yellow-400 bg-yellow-400/10 border-yellow-400/20' },
             { label: 'Happy passengers', value: '1000+', icon: Users, color: 'text-accent-lavender bg-accent-lavender/10 border-accent-lavender/20' },
-            { label: 'Safe & Verified', value: '100%', icon: Shield, color: 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20' }
+            { label: 'Safe & Verified', value: '100%', icon: Shield, color: 'text-accent-purple bg-accent-purple/10 border-accent-purple/20' }
           ].map((stat, i) => (
             <div 
               key={i} 
@@ -220,7 +220,7 @@ function App() {
 
             <StitchCard>
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-emerald-400/10 rounded-xl text-emerald-400">
+                <div className="p-3 bg-accent-purple/10 rounded-xl text-accent-purple">
                   <span className="material-icons text-2xl">update</span>
                 </div>
                 <h3 className="font-display text-xl font-bold text-white">Same-Day Return</h3>
