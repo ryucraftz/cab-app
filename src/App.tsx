@@ -68,7 +68,7 @@ function App() {
           {/* CTA & Actions */}
           <div className="hidden md:flex items-center gap-4">
             <a 
-              href="tel:+919876543210" 
+              href="tel:+919657436570" 
               className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm font-medium hover:bg-white/10 transition-colors duration-300"
             >
               <Phone className="h-4 w-4 text-primary" />
@@ -116,7 +116,7 @@ function App() {
             </a>
             <div className="pt-4 flex flex-col gap-3">
               <a 
-                href="tel:+919876543210" 
+                href="tel:+919657436570" 
                 className="flex items-center justify-center gap-2 py-3 rounded-lg bg-white/5 border border-white/10 text-sm font-medium hover:bg-white/10 transition-colors"
               >
                 <Phone className="h-4 w-4 text-primary" />

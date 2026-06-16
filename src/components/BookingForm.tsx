@@ -2,8 +2,8 @@ import { useState, type FormEvent } from 'react';
 import { Calendar, Clock, MapPin, Users, Phone, User, MessageCircle } from 'lucide-react';
 import { StitchButton } from './StitchButton';
 
-// Default phone number since the user hasn't provided one yet
-const WHATSAPP_NUMBER = "919876543210"; 
+// Use the provided phone number
+const WHATSAPP_NUMBER = "919657436570"; 
 
 export function BookingForm() {
   const [formData, setFormData] = useState({
