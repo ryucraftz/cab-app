@@ -66,7 +66,23 @@ export function BookingForm() {
         }
       }
 
-      // 2. Show Success State
+      // 2. Trigger Email Notification via Vercel Serverless Function
+      // We don't await this because we want to show success to the user immediately
+      // The email will be sent in the background
+      fetch('/api/notify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          customer_name: data.name,
+          customer_phone: data.phone,
+          pickup_location: data.pickup,
+          dropoff_location: data.dropoff,
+          pickup_time: `${data.date}T${data.time}:00`,
+          passengers: data.passengers
+        }),
+      }).catch(err => console.error("Failed to trigger email notification:", err));
+
+      // 3. Show Success State
       setIsSuccess(true);
       reset();
       
