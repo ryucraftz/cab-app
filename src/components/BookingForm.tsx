@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Calendar, Clock, MapPin, Users, Phone, User, CheckCircle2 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
+import { LocationAutocomplete } from '@/components/ui/LocationAutocomplete';
 
 // Define the validation schema using Zod
 const bookingSchema = z.object({
@@ -30,13 +31,20 @@ export function BookingForm() {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
+    setValue,
+    watch
   } = useForm<BookingFormValues>({
     resolver: zodResolver(bookingSchema),
     defaultValues: {
-      passengers: '1'
+      passengers: '1',
+      pickup: '',
+      dropoff: ''
     }
   });
+
+  const pickupValue = watch('pickup');
+  const dropoffValue = watch('dropoff');
 
   const onSubmit = async (data: BookingFormValues) => {
     setIsSubmitting(true);
@@ -171,30 +179,22 @@ export function BookingForm() {
 
         {/* Location Info */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <label className="text-sm font-semibold text-slate-700 flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-slate-400" /> Pickup Location
-            </label>
-            <input 
-              {...register('pickup')}
-              type="text" 
-              placeholder="e.g. Pune Station"
-              className={`w-full bg-slate-50 border ${errors.pickup ? 'border-red-500' : 'border-gray-200'} rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all`}
-            />
-            {errors.pickup && <p className="text-red-500 text-xs mt-1">{errors.pickup.message}</p>}
-          </div>
-          <div className="space-y-2">
-            <label className="text-sm font-semibold text-slate-700 flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-slate-400" /> Drop-off Location
-            </label>
-            <input 
-              {...register('dropoff')}
-              type="text" 
-              placeholder="e.g. Mumbai Airport (T2)"
-              className={`w-full bg-slate-50 border ${errors.dropoff ? 'border-red-500' : 'border-gray-200'} rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all`}
-            />
-            {errors.dropoff && <p className="text-red-500 text-xs mt-1">{errors.dropoff.message}</p>}
-          </div>
+          <LocationAutocomplete
+            label="Pickup Location"
+            placeholder="e.g. Pune Station"
+            value={pickupValue}
+            onChange={(val) => setValue('pickup', val, { shouldValidate: true })}
+            error={errors.pickup?.message}
+            showPinButton={true}
+          />
+          <LocationAutocomplete
+            label="Drop-off Location"
+            placeholder="e.g. Mumbai Airport (T2)"
+            value={dropoffValue}
+            onChange={(val) => setValue('dropoff', val, { shouldValidate: true })}
+            error={errors.dropoff?.message}
+            showPinButton={false}
+          />
         </div>
 
         {/* Time & Passengers Info */}
