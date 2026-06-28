@@ -24,6 +24,7 @@ export function BookingForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [lastSubmittedData, setLastSubmittedData] = useState<BookingFormValues | null>(null);
 
   const {
     register,
@@ -40,6 +41,7 @@ export function BookingForm() {
   const onSubmit = async (data: BookingFormValues) => {
     setIsSubmitting(true);
     setErrorMsg(null);
+    setLastSubmittedData(data);
     
     try {
       // 1. Save to Supabase Backend
@@ -67,8 +69,6 @@ export function BookingForm() {
       }
 
       // 2. Trigger Email Notification via Vercel Serverless Function
-      // We don't await this because we want to show success to the user immediately
-      // The email will be sent in the background
       fetch('/api/notify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -94,17 +94,33 @@ export function BookingForm() {
   };
 
   if (isSuccess) {
+    const adminPhone = "919657436570";
+    const waMessage = lastSubmittedData ? 
+      `Hi Yogesh Cabs! I just booked a ride.%0A%0A*Name:* ${lastSubmittedData.name}%0A*Phone:* ${lastSubmittedData.phone}%0A*Pickup:* ${lastSubmittedData.pickup}%0A*Dropoff:* ${lastSubmittedData.dropoff}%0A*Date:* ${lastSubmittedData.date}%0A*Time:* ${lastSubmittedData.time}%0A*Passengers:* ${lastSubmittedData.passengers}%0A%0APlease confirm my booking!` 
+      : "Hi Yogesh Cabs! I just booked a ride. Please confirm my booking!";
+
     return (
-      <div className="w-full max-w-2xl mx-auto bg-white border border-gray-200 rounded-3xl p-12 text-center shadow-lg">
+      <div className="w-full max-w-2xl mx-auto bg-white border border-gray-200 rounded-3xl p-8 md:p-12 text-center shadow-lg">
         <CheckCircle2 className="w-20 h-20 text-emerald-500 mx-auto mb-6" />
-        <h2 className="text-3xl font-display font-bold text-slate-900 mb-2">Booking Confirmed!</h2>
-        <p className="text-slate-500">Your ride request has been saved securely to our system. Our captain will contact you shortly to confirm the details.</p>
-        <button 
-          onClick={() => setIsSuccess(false)}
-          className="mt-8 px-8 py-3 rounded-lg bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-colors shadow-sm"
-        >
-          Book Another Ride
-        </button>
+        <h2 className="text-3xl font-display font-bold text-slate-900 mb-2">Booking Saved!</h2>
+        <p className="text-slate-500 mb-8">Your ride request has been saved securely. For faster confirmation, send your details directly to our driver on WhatsApp!</p>
+        
+        <div className="flex flex-col gap-3 max-w-xs mx-auto">
+          <a 
+            href={`https://wa.me/${adminPhone}?text=${waMessage}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] text-white font-bold hover:bg-[#1fae54] transition-colors shadow-md shadow-[#25D366]/20"
+          >
+            Send Details to Driver
+          </a>
+          <button 
+            onClick={() => setIsSuccess(false)}
+            className="px-8 py-3 rounded-xl bg-slate-100 text-slate-700 font-semibold hover:bg-slate-200 transition-colors"
+          >
+            Book Another Ride
+          </button>
+        </div>
       </div>
     );
   }
