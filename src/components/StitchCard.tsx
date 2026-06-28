@@ -13,7 +13,7 @@ export const StitchCard: React.FC<StitchCardProps> = ({
 }) => {
   return (
     <div 
-      className={`bg-surface-dark border border-white/5 rounded-3xl shadow-lg overflow-hidden transition-all duration-500 hover:-translate-y-1.5 hover:border-primary/20 hover:shadow-xl ${noPadding ? '' : 'p-8'} ${className}`}
+      className={`bg-white border border-gray-200 rounded-3xl shadow-sm transition-all duration-300 hover:shadow-md ${noPadding ? '' : 'p-8'} ${className}`}
     >
       {children}
     </div>

@@ -27,7 +27,7 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({
   const isMerged = action === 'MERGED';
 
   return (
-    <div className="flex items-center justify-between gap-4 rounded-lg bg-surface-dark p-4 min-h-14 shadow-sm ring-1 ring-white/10">
+    <div className="flex items-center justify-between gap-4 rounded-lg bg-white p-4 min-h-14 shadow-sm border border-gray-100">
       <div className="flex items-center gap-4 overflow-hidden">
         <div
           className="aspect-square h-10 w-10 flex-shrink-0 rounded-full bg-cover bg-center bg-no-repeat"
@@ -40,12 +40,12 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({
             {username}
           </a>
 
-          <span className={`inline-block px-2 py-0.5 text-xs font-semibold rounded-full ${isMerged ? 'bg-purple-500/30 text-purple-300' : 'bg-primary/30 text-primary'
+          <span className={`inline-block px-2 py-0.5 text-xs font-semibold rounded-full ${isMerged ? 'bg-purple-100 text-purple-600' : 'bg-primary/10 text-primary-dark'
             }`}>
             {action}
           </span>
 
-          <span className="text-white/60">in</span>
+          <span className="text-slate-500">in</span>
 
           <a href="#" className="text-primary hover:underline truncate">
             {repoName}
@@ -54,7 +54,7 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({
       </div>
 
       <div className="shrink-0">
-        <p className="text-sm font-normal leading-normal text-white/50">
+        <p className="text-sm font-normal leading-normal text-slate-400">
           {timestamp}
         </p>
       </div>
